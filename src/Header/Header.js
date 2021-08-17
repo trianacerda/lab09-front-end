@@ -10,7 +10,7 @@ class Header extends Component {
             <NavLink exact to="/">
               All The Animals
             </NavLink>
-            <NavLink to="/animals/:id">Animal Profile</NavLink>
+            {/* <NavLink to="/animals/:id">Animal Profile</NavLink> */}
             <NavLink to="/create">Add To Da Pack</NavLink>
           </div>
         </header>
