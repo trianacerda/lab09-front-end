@@ -1,16 +1,18 @@
 header {
-    width: 100vw;
-    height: 40px;
-    background-color: #c3f3c0;
+    width: 200vw;
+    height: 60px;
+    background-color: olive;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    font-style:italic;
+    font-weight: 700;
 }
 a.active {
     text-decoration: none;
-    color: #462255;
+    color: navajowhite;
 }
 
 a {
     margin: 10px;
-    color: #313b72;
+    color: navy;
 }
