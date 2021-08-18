@@ -26,11 +26,23 @@ class AnimalsDetails extends Component {
                     value={this.state.snuggly} 
                     onChange={ async (e) => {
                     await this.setState({ snuggly: e.target.value });
-                    console.log(this.state.snuggly)
+                    // console.log(this.state.snuggly)
                     }} 
                     >
                     <option value={true}>true</option>
                     <option value={false}>false</option>
+                </select>
+                <br/>
+                <label>what type of animal is this??</label> 
+                <select 
+                    value={this.state.type_name} 
+                    onChange={ async (e) => {
+                    await this.setState({ type_name: e.target.value });
+                    // console.log (typeof (this.state.type_name))
+                    }} 
+                    >
+                    <option value='cat'>cat</option>
+                    <option value='dog'>dog</option>
                 </select>
            </>
          );
