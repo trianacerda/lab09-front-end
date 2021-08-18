@@ -6,7 +6,7 @@ class AnimalsDetails extends Component {
         id: 0,
         name: '',
         type: 0,
-        snuggly: true,
+        snuggly: '',
     };
 
     componentDidMount = async () => {
@@ -18,9 +18,13 @@ class AnimalsDetails extends Component {
         return ( 
             <>
                 <h1>{ this.state.name }</h1>
-                <div>this furbaby is snuggly?</div> 
-                <div>{ this.state.type }</div>
-                <div>{ this.state.snuggly }</div> 
+                <label>this furbaby is snuggly?</label> 
+                <select onChange={(e) => {
+                    this.setState({ snuggly: e.target.value });
+                }} value={this.state.snuggly ? true : false}>
+                <option value='true'>TRUE</option>
+                <option value='false'>FALSE</option>
+                </select>
            </>
          );
     }
