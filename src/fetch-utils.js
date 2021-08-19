@@ -18,3 +18,29 @@ export const getTypes = async () => {
     const data = await resp.json();
     return data;
 };
+
+export const updatePackAnimal = async (animalInPack) => {
+    const resp = await fetch(`${URL}/animals/${animalInPack.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(animalInPack),
+    });
+    const data = await resp.json();
+    console.log(data)
+    return data;
+}; 
+
+export const createNewAnimal = async (animalInPack) => {
+    const resp = await fetch(`${URL}/animals/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(animalInPack),
+    });
+    const data = await resp.json();
+    console.log(data)
+    return data;
+}; 
