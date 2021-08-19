@@ -1,0 +1,18 @@
+header {
+    width: 200vw;
+    height: 60px;
+    background-color: olive;
+    display: flex;
+    justify-content: flex-start;
+    font-style:italic;
+    font-weight: 700;
+}
+a.active {
+    text-decoration: none;
+    color: navajowhite;
+}
+
+a {
+    margin: 10px;
+    color: navy;
+}
