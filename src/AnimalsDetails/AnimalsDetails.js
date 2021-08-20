@@ -5,32 +5,24 @@ class AnimalsDetails extends Component {
     state = {
         id: 0,
         name: '',
-        type_name: '',
+        type_id: 0,
         snuggly: true,
+        animalTypes: [],
     };
 
     componentDidMount = async () => {
         const animalsId = this.props.match.params.id;
         const animalsData = await getAnimalById(animalsId);
         const animalTypes = await getTypes();
-        // console.log(animalsData)
         this.setState( {...animalsData, animalTypes } );
-    
-        // console.log('state' ,this.state)
     };
-    getTypesId = () => {
-        const typesObject = this.state.animalsData.find(
-            (animalId) => animalId.name === this.state.type_id
-        );
-        return typesObject.id;
-    }
 
     handleClick = async (e) => {
         e.preventDefault();
         const updatedAnimalData = {
             id: this.state.id,
             name: this.state.name,
-            type_name: this.state.type_name,
+            type_id: this.state.type_id,
             snuggly: this.state.snuggly,
         };
         const data = await updatePackAnimal(updatedAnimalData);
@@ -70,14 +62,13 @@ class AnimalsDetails extends Component {
                     <div className='form-group'>
                         <label>what type of animal is this??</label> 
                             <select 
-                                value={this.state.type_name} 
+                                value={this.state.type_id} 
                                 onChange={ async (e) => {
-                                await this.setState({ type_name: e.target.value });
+                                await this.setState({ type_id: e.target.value });
                                 // console.log (typeof (this.state.type_name))
                                 }} 
-                                >
-                                    <option value='cat'>cat</option>
-                                    <option value='dog'>dog</option>
+                                > { this.state.animalTypes.map((item) => <option value={item.id}>{item.type}</option>
+                                )}
                             </select>
                     </div>
                     <button onClick={this.handleClick}>Update Pack</button>
