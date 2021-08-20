@@ -26,7 +26,7 @@ class AnimalsDetails extends Component {
             snuggly: this.state.snuggly,
         };
         const data = await updatePackAnimal(updatedAnimalData);
-        console.log('state', this.state);
+        // console.log('state', this.state);
         return data;
     };
     
@@ -40,7 +40,7 @@ class AnimalsDetails extends Component {
             snuggly: this.state.snuggly,
         };
         const data = await deleteAnimal(updatedAnimalData);
-        console.log('state', this.state);
+        // console.log('state', this.state);
         return data;
     };
     
