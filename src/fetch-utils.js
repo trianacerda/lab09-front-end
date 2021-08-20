@@ -44,3 +44,16 @@ export const createNewAnimal = async (animalInPack) => {
     console.log(data)
     return data;
 }; 
+
+export const deleteAnimal = async (animalInPack) => {
+    const resp = await fetch(`${URL}/animals/${animalInPack.id}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(animalInPack),
+    });
+    const data = await resp.json();
+    console.log(data)
+    return data;
+}; 

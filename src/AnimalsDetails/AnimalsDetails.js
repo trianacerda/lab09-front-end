@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { getAnimalById, updatePackAnimal, getTypes } from '../fetch-utils.js';
+import { getAnimalById, updatePackAnimal, getTypes, deleteAnimal } from '../fetch-utils.js';
 
 class AnimalsDetails extends Component {
     state = {
@@ -30,6 +30,21 @@ class AnimalsDetails extends Component {
         return data;
     };
     
+
+    deleteClick = async (e) => {
+        e.preventDefault();
+        const updatedAnimalData = {
+            id: this.state.id,
+            name: this.state.name,
+            type_id: this.state.type_id,
+            snuggly: this.state.snuggly,
+        };
+        const data = await deleteAnimal(updatedAnimalData);
+        console.log('state', this.state);
+        return data;
+    };
+    
+
     render() { 
         return ( 
             <>
@@ -72,6 +87,7 @@ class AnimalsDetails extends Component {
                             </select>
                     </div>
                     <button onClick={this.handleClick}>Update Pack</button>
+                    <button onClick={this.deleteClick}>Delete This Animal!</button>
                 </form>
            </>
         );
