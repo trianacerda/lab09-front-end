@@ -12,7 +12,7 @@ class AnimalsList extends Component {
         return ( 
             <section className="animals-list">
                 {animals.map((furBaby) => (
-                    <div className="animals-holder">
+                    <div key={furBaby.id} className="animals-holder">
                         <h2>
                             <Link to={`/animals/${furBaby.id}`}>{furBaby.name}</Link>
                         </h2>

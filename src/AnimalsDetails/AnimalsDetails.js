@@ -3,9 +3,9 @@ import { getAnimalById, updatePackAnimal, getTypes } from '../fetch-utils.js';
 
 class AnimalsDetails extends Component {
     state = {
-        id: 0,
+        id: 1,
         name: '',
-        type_id: 0,
+        type_id: 1,
         snuggly: true,
         animalTypes: [],
     };
@@ -67,7 +67,7 @@ class AnimalsDetails extends Component {
                                 await this.setState({ type_id: e.target.value });
                                 // console.log (typeof (this.state.type_name))
                                 }} 
-                                > { this.state.animalTypes.map((item) => <option value={item.id}>{item.type}</option>
+                                > { this.state.animalTypes.map((item) => <option key={item.type} value={item.id}>{item.type}</option>
                                 )}
                             </select>
                     </div>
