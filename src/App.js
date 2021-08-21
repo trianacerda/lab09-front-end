@@ -8,7 +8,7 @@ import AnimalsDetails from './AnimalsDetails/AnimalsDetails.js';
 class App extends Component {
   render (){
     return (
-    <section className="animalsApp">
+    <section className="App">
       <BrowserRouter>
         <Header />
           <Switch>
